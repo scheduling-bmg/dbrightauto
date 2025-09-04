@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://dbrightauto.net/sitemap.xml
+
+# D'brightauto - Premium Limo Service Atlanta
+# Allow all search engines to crawl our luxury transportation website
+# Mercedes Sprinter, Cadillac Escalade, Chevrolet Suburban fleet
+
+# Disallow admin areas (if any in future)
+Disallow: /admin/
+Disallow: /.netlify/
+
+# Crawl delay
+Crawl-delay: 1

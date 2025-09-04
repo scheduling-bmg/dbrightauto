@@ -1,0 +1,37 @@
+[build]
+  # Build settings for D'brightauto website
+  publish = "."
+  command = ""
+
+[build.environment]
+  # No build environment needed for static site
+
+[[redirects]]
+  # Catch-all redirect for SPA routing
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  # Headers for all pages
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  # Cache static assets
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "max-age=31536000"
+
+[context.production.environment]
+  NODE_VERSION = "18.17.0"
+
+[context.deploy-preview.environment]
+  NODE_VERSION = "18.17.0"
+
+[context.branch-deploy.environment]
+  NODE_VERSION = "18.17.0"
